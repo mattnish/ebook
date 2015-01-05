@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  field_id: 
+  field_type: Field
+  url: MyString
+  field_id: 1
+
+two:
+  field_id: 
+  field_type: Field
+  url: MyString
+  field_id: 1

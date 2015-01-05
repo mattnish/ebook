@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  sequence_num: 1
+  chapter_num: 1
+  ebook_id: 1
+
+two:
+  title: MyString
+  sequence_num: 1
+  chapter_num: 1
+  ebook_id: 1
