@@ -1,4 +1,5 @@
 ActiveAdmin.register User do
+  permit_params :email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :first_name, :last_name, :biography, :show_picture, :show_location, :city_name, :state_name, :country_code, :country_name, :terms_agree, :articles_posted, :period_articles_posted, :last_period_update, :user_type
 
 
   # See permitted parameters documentation:
