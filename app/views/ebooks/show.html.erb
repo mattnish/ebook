@@ -1,0 +1,27 @@
+ebooks#show
+<%= @ebook.inspect %>
+<br><br>
+<div>
+  PAGES
+  <div>
+    <% @pages.each do |page| %>
+      <% if page.class == ChapterPage %>
+        <div>
+          Chapter Page:
+          <br>
+          Title: <%= page.field_groups.where(content_type: 'title').first.wysiwyg_fields.first.inspect %>
+          Subtitle: <%= page.field_groups.where(content_type: 'title').first.wysiwyg_fields.last.inspect %>
+          Image: <%= page.field_groups.where(content_type: 'title').first.image_fields.first.inspect %>
+          <br>
+          <br>
+          Content: <%= page.field_groups.where(content_type: 'body').inspect %>
+          <br>
+          <br>
+          Side: <%= page.field_groups.where(content_type: 'side').inspect %>
+        </div>
+      <% end %>
+    <% end %>
+
+  </div>
+</div>
+<% binding.pry %>

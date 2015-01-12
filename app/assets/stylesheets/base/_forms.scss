@@ -1,0 +1,32 @@
+//  Forms
+
+::-webkit-input-placeholder {
+  color: #ccc !important;
+}
+::-moz-placeholder {
+  color: #ccc !important;
+}
+:-moz-placeholder {   /* Older versions of Firefox */
+  color: #ccc !important;
+}
+:-ms-input-placeholder {
+  color: #ccc !important;
+}
+
+
+.form-control {
+  height: 40px;
+  padding: 10px 12px 8px;
+  font-size: 15px;
+  @include border-radius(2px);
+  @include box-shadow(none);
+  &:active, &:focus {
+    border-color: $primary;
+    @include box-shadow(none);
+  }
+}
+
+textarea {
+  min-height: 120px;
+  resize: none;
+}

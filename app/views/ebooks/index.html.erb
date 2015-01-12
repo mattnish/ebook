@@ -1,1 +1,38 @@
-ebooks list
+<div data-ebook-list-page>
+  <div>
+    ebooks list
+  </div>
+  <div>
+    <% @ebooks.each do |ebook| %>
+      <div>
+        Title: <%= link_to ebook.title, ebook, class: 'el-book-item'  %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    Create a new ebook
+  </div>
+
+  <%= form_for :ebook, remote: true, data: { 'new-ebook' => true } do |f| %>
+    <div>
+      <div>
+        <%= f.label :title, 'Title' %>
+      </div>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <div>
+        <%= f.label :description, 'Description' %>
+      </div>
+      <%= f.text_area :description %>
+    </div>
+    <div>
+      <div>
+        <%= f.label :publisher_name, 'Publisher Name' %>
+      </div>
+      <%= f.text_field :publisher_name %>
+    </div>
+    <%= submit_tag 'Create' %>
+  <% end %>
+</div>

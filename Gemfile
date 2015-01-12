@@ -5,14 +5,18 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
+
+gem 'bootstrap-sass', '~> 3.3.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+gem 'compass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
+gem "font-awesome-rails"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -41,12 +45,15 @@ gem 'spring',        group: :development
 gem 'bundler'
 
 gem 'devise', github: 'plataformatec/devise'
+gem 'devise-encryptable'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'rails_config'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
+
+gem 'annotate', '~> 2.6.5'
 
 group :development, :test do
   gem 'dotenv-rails'

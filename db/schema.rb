@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105061814) do
+ActiveRecord::Schema.define(version: 20150112075132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20150105061814) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "theme_id",        default: 1
   end
 
   create_table "field_groups", force: true do |t|
@@ -85,19 +86,13 @@ ActiveRecord::Schema.define(version: 20150105061814) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "required",     default: false
+    t.string   "cssnamespace"
+    t.string   "content_type"
+    t.string   "layout"
   end
 
   add_index "field_groups", ["page_id", "page_type"], name: "index_field_groups_on_page_id_and_page_type", using: :btree
-
-  create_table "fields", force: true do |t|
-    t.integer  "page_id"
-    t.string   "page_type"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "fields", ["page_id", "page_type"], name: "index_fields_on_page_id_and_page_type", using: :btree
 
   create_table "general_pages", force: true do |t|
     t.string   "title"
@@ -134,6 +129,13 @@ ActiveRecord::Schema.define(version: 20150105061814) do
   end
 
   add_index "text_fields", ["field_id", "field_type"], name: "index_text_fields_on_field_id_and_field_type", using: :btree
+
+  create_table "themes", force: true do |t|
+    t.string   "title"
+    t.string   "cssnamespace"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",  null: false

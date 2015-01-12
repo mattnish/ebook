@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require active_admin
+//= require underscore-min
+//= require jquery.history
+//= require jquery.pjax
+
+//= require global
+//= require pages/home
+//= require pages/ebooks
+//= require pages/ebooks-edit

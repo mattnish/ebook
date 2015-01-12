@@ -1,18 +1,14 @@
 # == Schema Information
 #
-# Table name: cover_pages
+# Table name: themes
 #
 #  id           :integer          not null, primary key
 #  title        :string(255)
-#  sequence_num :integer
-#  ebook_id     :integer
+#  cssnamespace :string(255)
 #  created_at   :datetime
 #  updated_at   :datetime
 #
 
-class CoverPage < ActiveRecord::Base
-
-  belongs_to :ebook
-  has_many :field_groups, as: :page
-
+class Theme < ActiveRecord::Base
+  has_many :ebooks
 end

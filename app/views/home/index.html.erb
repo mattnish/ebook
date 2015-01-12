@@ -1,4 +1,18 @@
-<div>
+<div data-home-page>
   <h1>Home page</h1>
   Test
+  <%# binding.pry %>
+  <% if current_user %>
+    <div>
+      User: <%= current_user.name %>
+    </div>
+  <% end %>
+  <% unless current_user %>
+  <div>
+    no current user
+  </div>
+  <% end %>
+  <% if user_signed_in? %>
+    <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+  <% end %>
 </div>
